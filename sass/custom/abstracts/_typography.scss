@@ -1,0 +1,87 @@
+body {
+  font-family: "General Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: calc(1.33 / 1.05);
+  color: map-get($neutrals, "900");
+  clear: both;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: map-get($font-size, "800");
+  letter-spacing: map-get($letter-spacing, "tighter");
+}
+
+h2 {
+  font-size: map-get($font-size, "700");
+  letter-spacing: map-get($letter-spacing, "tight");
+}
+
+h3 {
+  font-size: map-get($font-size, "600");
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+h4 {
+  font-size: map-get($font-size, "500");
+}
+
+h5,
+h6 {
+  font-size: map-get($font-size, "400");
+}
+
+p {
+  font-size: map-get($font-size, "400");
+  line-height: $line-height;
+  font-weight: 400;
+  color: map-get($neutrals, "500");
+}
+
+strong {
+  font-weight: 600;
+  color: map-get($neutrals, "900");
+}
+
+.heading--wrapper {
+  width: 100%;
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+h1 .span {
+  padding: 0.25rem 1rem;
+  background-color: map-get($primary, "500");
+  box-shadow: 0 10px 15px -3px rgba($black, 0.1),
+    0 4px 6px -4px rgba($black, 0.1);
+  color: white;
+  display: inline-block;
+  transform: rotate(-2.5deg);
+}
+
+.prose {
+  width: 100%;
+  max-width: 65ch;
+  margin-inline: auto;
+
+  p:not(last-of-type) {
+    margin-bottom: map-get($spacing, "400");
+  }
+}

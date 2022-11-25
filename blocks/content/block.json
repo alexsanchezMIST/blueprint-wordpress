@@ -1,0 +1,11 @@
+{
+  "name": "acf/content",
+  "title": "Content",
+  "description": "A custom content block for long-form text.",
+  "category": "formatting",
+  "keywords": ["content"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "content.php"
+  }
+}

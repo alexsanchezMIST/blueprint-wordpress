@@ -1,0 +1,11 @@
+{
+  "name": "acf/cta",
+  "title": "CTA",
+  "description": "A custom CTA block.",
+  "category": "formatting",
+  "keywords": ["cta"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "cta.php"
+  }
+}

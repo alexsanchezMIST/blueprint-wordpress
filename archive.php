@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package _s
+ * @package Blueprint
  */
 
 get_header();
@@ -21,31 +21,29 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			<section id="posts" class="section">
+            <div class="container">
+                <?php if($posts ->  have_posts()): ?>
+                    <div class="post--card--wrapper">
+                        <?php while ($posts -> have_posts()) : $posts -> the_post(); ?>
+                            <a href="<?php the_permalink(); ?>" class="post--card">
+                                <img src="<?php the_post_thumbnail(); ?>" alt="" class="post--thumbnail" />
+                                <div class="post--card--bottom">
+                                    <h5 class="post--card--heading"><?php the_title(); ?></h5>
+                                    <div class="post--card--excerpt"><?php the_excerpt(); ?></div>
+                                </div>
+                        <?php endwhile; ?>
+                    </div>
+                <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+            </div>
+        </section>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+		<?php else : ?>
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+		<?php endif ;?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

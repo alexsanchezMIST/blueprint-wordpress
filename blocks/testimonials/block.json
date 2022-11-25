@@ -1,0 +1,11 @@
+{
+  "name": "acf/testimonials",
+  "title": "Testimonials",
+  "description": "A custom testimonials block that displays content from the Testimonials post type.",
+  "category": "formatting",
+  "keywords": ["testimonials"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "testimonials.php"
+  }
+}

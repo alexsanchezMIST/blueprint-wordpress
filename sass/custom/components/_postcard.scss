@@ -1,0 +1,68 @@
+.post--card--wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(auto, minmax(0, min-content));
+  gap: map-get($spacing, "400");
+
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.post--card {
+  padding: map-get($spacing, "400");
+  border: 1px solid map-get($neutrals, "100");
+  border-radius: 0.25rem;
+  background-color: $white;
+  box-shadow: 0 4px 6px -1px rgba($black, 0.1), 0 2px 4px -2px rgba($black, 0.1);
+  transition: all 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba($black, 0.25),
+      0 4px 6px -4px rgba($black, 0.25);
+  }
+
+  &:hover .post--card--heading {
+    color: map-get($secondary, "500");
+  }
+}
+
+.post--thumbnail {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.post--card--badge {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: map-get($spacing, "200");
+  padding-block: map-get($spacing, "100");
+  padding-inline: map-get($spacing, "200");
+  border-radius: 0.125rem;
+  background-color: rgba(map-get($primary, "100"), 0.25);
+  font-size: map-get($font-size, "300");
+  font-weight: 600;
+  line-height: 1;
+  color: map-get($primary, "500");
+}
+
+.post--card--bottom {
+  padding: map-get($spacing, "400");
+}
+
+.post--card--heading {
+  margin-bottom: map-get($spacing, "400");
+  transition: color 0.3s;
+}
+
+.post--card--excerpt p {
+  font-size: map-get($font-size, "300");
+}

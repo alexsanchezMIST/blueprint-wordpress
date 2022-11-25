@@ -1,0 +1,11 @@
+{
+  "name": "acf/columns",
+  "title": "Columns",
+  "description": "A custom columns block with text and image.",
+  "category": "formatting",
+  "keywords": ["columns"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "columns.php"
+  }
+}

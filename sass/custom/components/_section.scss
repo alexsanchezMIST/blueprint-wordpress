@@ -1,0 +1,8 @@
+section {
+  position: relative;
+  padding-block: map-get($spacing-pairs, "from-600-to-900");
+
+  &.py-0 {
+    padding-block: unset;
+  }
+}

@@ -1,0 +1,39 @@
+.services--card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 48.125rem;
+  margin-inline: auto;
+  padding-block: map-get($spacing, "700");
+  padding-inline: map-get($spacing, "600");
+  border: 1px solid map-get($primary, "100");
+
+  &:not(:first-of-type) {
+    margin-top: map-get($spacing, "800");
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: map-get($spacing, "800");
+  }
+}
+
+.services--card--image {
+  margin-bottom: map-get($spacing, "600");
+  box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+}
+
+.services--card--title {
+  margin-bottom: map-get($spacing, "400");
+}
+
+.services--description--wrapper {
+  margin-bottom: map-get($spacing, "600");
+}
+
+.services--description--wrapper > p {
+  &:not(last-of-type) {
+    margin-bottom: map-get($spacing, "400");
+  }
+}

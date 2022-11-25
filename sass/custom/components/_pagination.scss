@@ -1,0 +1,61 @@
+.pagination--wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: map-get($spacing, "600");
+}
+
+.nav-previous,
+.nav-next {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-block: map-get($spacing, "300");
+  padding-inline: map-get($spacing, "400");
+  background-color: $white;
+  border: 1px solid map-get($secondary, "500");
+  border-radius: 0.125rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: map-get($secondary, "500");
+  }
+
+  &:active {
+    border-color: map-get($secondary, "600");
+    background-color: map-get($secondary, "600");
+  }
+}
+
+.nav-previous > a,
+.nav-next > a {
+  font-size: map-get($font-size, "300");
+  font-weight: 500;
+  line-height: 1;
+  color: map-get($secondary, "500");
+  text-decoration: none;
+
+  &:hover {
+    color: $white;
+  }
+
+  &:active {
+    color: $white;
+  }
+}
+
+.page-numbers {
+  font-size: map-get($font-size, "300");
+  line-height: 1;
+  font-weight: 500;
+  color: map-get($neutrals, "400");
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: map-get($secondary, "500");
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "acf/optin",
+  "title": "Optin",
+  "description": "A custom optin block to advertise a lead magnet.",
+  "category": "formatting",
+  "keywords": ["optin"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "optin.php"
+  }
+}

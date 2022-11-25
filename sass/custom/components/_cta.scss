@@ -1,0 +1,65 @@
+.cta {
+  position: relative;
+  padding: map-get($spacing, "600");
+  background-image: linear-gradient(
+    to bottom,
+    map-get($primary, "400"),
+    map-get($primary, "500")
+  );
+  box-shadow: 0 25px 50px -12px rgba($black, 0.25);
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url("assets/img/cta-background.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.75;
+    mix-blend-mode: screen;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 25;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/img/graph-paper-white.svg");
+    background-repeat: repeat;
+    background-position: center center;
+    background-size: 5rem;
+    opacity: 0.25;
+    background-blend-mode: overlay;
+  }
+}
+.cta--inner {
+  position: relative;
+  z-index: 100;
+  padding-block: map-get($spacing, "800");
+  padding-inline: map-get($spacing, "600");
+  border: 1px solid $white;
+}
+.cta--left {
+  @media screen and (min-width: map-get($breakpoints, "lg")) {
+    width: 50%;
+  }
+}
+.cta--heading {
+  color: $white;
+  margin-bottom: map-get($spacing, "400");
+}
+.cta--subheading {
+  color: map-get($neutrals, "50");
+  margin-bottom: map-get($spacing, "600");
+}

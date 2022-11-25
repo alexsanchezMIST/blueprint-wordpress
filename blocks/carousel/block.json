@@ -1,0 +1,11 @@
+{
+  "name": "acf/carousel",
+  "title": "Carousel",
+  "description": "A custom carousel block with scrolling logos.",
+  "category": "formatting",
+  "keywords": ["carousel"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "carousel.php"
+  }
+}
