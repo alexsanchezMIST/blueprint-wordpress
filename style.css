@@ -1751,7 +1751,7 @@ a:visited {
 	margin-bottom: clamp(1rem, calc(0.82rem + 0.45vw), 1.25rem);
 }
 
-.card--content p {
+.card--content {
 	margin-bottom: clamp(1rem, calc(0.82rem + 0.45vw), 1.25rem);
 	font-size: clamp(0.75rem, calc(0.62rem + 0.33vw), 0.94rem);
 }
