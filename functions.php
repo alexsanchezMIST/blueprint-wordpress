@@ -196,6 +196,7 @@ function register_acf_blocks() {
 	register_block_type( __DIR__ . '/blocks/cta');
 	register_block_type( __DIR__ . '/blocks/optin');
 	register_block_type( __DIR__ . '/blocks/services');
+	register_block_type( __DIR__ . '/blocks/services-detail');
 	register_block_type( __DIR__ . '/blocks/testimonials');
 }
 
