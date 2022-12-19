@@ -7,8 +7,8 @@
   gap: map-get($spacing, "600");
 }
 
-.nav-previous,
-.nav-next {
+.nav-previous > a,
+.nav-next > a {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -20,19 +20,6 @@
   border-radius: 0.125rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-
-  &:hover {
-    background-color: map-get($secondary, "500");
-  }
-
-  &:active {
-    border-color: map-get($secondary, "600");
-    background-color: map-get($secondary, "600");
-  }
-}
-
-.nav-previous > a,
-.nav-next > a {
   font-size: map-get($font-size, "300");
   font-weight: 500;
   line-height: 1;
@@ -40,10 +27,13 @@
   text-decoration: none;
 
   &:hover {
+    background-color: map-get($secondary, "500");
     color: $white;
   }
 
   &:active {
+    border-color: map-get($secondary, "600");
+    background-color: map-get($secondary, "600");
     color: $white;
   }
 }
@@ -55,7 +45,16 @@
   color: map-get($neutrals, "400");
   transition: color 0.3s ease-in-out;
 
-  &:hover {
+  &:hover,
+  &.current {
     color: map-get($secondary, "500");
   }
+}
+
+.pagination .nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: map-get($spacing, "400");
 }

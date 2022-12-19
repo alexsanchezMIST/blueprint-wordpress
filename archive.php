@@ -22,6 +22,7 @@ get_header();
 			</header><!-- .page-header -->
 
 			<section id="posts" class="section">
+                <h1>This is the archive page</h1>
             <div class="container">
                 <?php if($posts ->  have_posts()): ?>
                     <div class="post--card--wrapper">

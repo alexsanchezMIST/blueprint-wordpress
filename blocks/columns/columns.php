@@ -11,7 +11,10 @@
                 <?php endif; ?>
 
                 <?php if(get_field('has_button')): ?>
-                    <a href="<?php the_field('columns_button_link'); ?>" class="btn btn--secondary"><?php the_field('columns_button_text'); ?></a>
+                    <a href="<?php the_field('columns_button_link'); ?>" class="btn btn--secondary">
+                        <?php the_field('columns_button_text'); ?>
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/arrow-right.svg" alt="Icon" class="icon"/>
+                    </a>
                 <?php endif; ?>
 
             </div>

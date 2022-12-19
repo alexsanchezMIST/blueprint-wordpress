@@ -8,9 +8,9 @@ get_header();
     <section id="hero" class="section py-6">
         <div class="container">
             <div class="intro--wrapper">
-                <h1 class="hero--heading">Contact Me</h1>
-                <p class="hero--subheading">I want to make it as easy as possible to get in touch with me. Either fill out the form below or click on the button to email me directly, and I'll get back to you ASAP.</p>
-                <a href="mailto:jeff@morethan-engineering.com" class="btn btn--secondary">Send me an email</a>
+                <h1 class="hero--heading mb-2">Contact Me</h1>
+                <p class="hero--subheading mb-4">I want to make it as easy as possible to get in touch with me. Either fill out the form below or click on the button to email me directly, and I'll get back to you ASAP.</p>
+                <a href="mailto:jeff@morethaneng.com" class="btn btn--secondary"><span class="icon mail--icon"></span>Send me an email</a>
             </div>
         </div>
     </section>
@@ -24,6 +24,9 @@ get_header();
         </div>
     </section>
 
-    <?php get_template_part('blocks/cta/cta', 'page'); ?>
+    <?php the_content(); ?>
 
 </main>
+
+<?php
+get_footer();

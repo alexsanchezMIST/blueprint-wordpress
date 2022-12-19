@@ -1,0 +1,60 @@
+.owl-carousel {
+  z-index: 100 !important;
+  max-height: 30rem;
+}
+
+.testimonial,
+.owl-item {
+  position: relative;
+  display: inline-block;
+  height: min-content;
+  margin-inline: map-get($spacing, "300");
+  padding: map-get($spacing, "600");
+  background-color: $white;
+  border: 1px solid map-get($neutrals, "50");
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba($black, 0.1),
+    0 4px 6px -4px rgba($black, 0.1);
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 4rem;
+    height: 4rem;
+    background-image: url("assets/img/quote.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    opacity: 0.2;
+  }
+}
+
+.testimonial--content {
+  position: relative;
+}
+
+.testimonial--content > p,
+.owl-item p {
+  font-size: map-get($font-size, "300");
+  color: map-get($neutrals, "300");
+}
+.testimonial--author,
+.testimonial--title {
+  font-size: map-get($font-size, "300");
+}
+.testimonial--author {
+  font-weight: 600;
+}
+.testimonial--title {
+  color: map-get($neutrals, "300");
+}
+
+.owl-item img {
+  display: block !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  margin-bottom: map-get($spacing, "400");
+}

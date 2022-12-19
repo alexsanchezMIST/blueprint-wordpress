@@ -1,16 +1,12 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Blueprint
  */
+
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $posts = new WP_Query(array(
@@ -22,35 +18,21 @@ $posts = new WP_Query(array(
     'post_status' => 'publish',
 ));
 
-$categories = get_categories(array(
-    'hide_empty' => true,
-));
-
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+    <main id="primary" class="site-main">
         <section id="hero" class="section py-6">
             <div class="container">
                 <div class="intro--wrapper">
-                    <h1 class="hero--heading mb-4">Welcome to the <span class="span">blog!</span></h1>
-                    <p class="hero--subheading">This blog will help you take your career and leadership challenges beyond the problems to find solutions. Come here not just to learn new ideas but to take action!</p>
+                    <h1 class="hero--heading mb-4">Read all posts related to 
+                        <span class="span is-lowercase"><?php single_cat_title();?></span>
+                    </h1>
                 </div>
             </div>
         </section>
 
-        <section id="categories" class="section py-0">
-            <div class="container">
-                <div class="categories--wrapper">
-                    <?php foreach($categories as $category) {
-                        echo '<a href="'.get_category_link($category->term_id).'">'.$category->name.'</a>';
-                    }
-                    ;?>
-                </div>
-            </div>
-        </section>
-
-        <section id="search" class="section py-6">
+        <section id="search" class="section py-2">
             <div class="container">
                 <div class="search--wrapper">
                     <?php get_search_form(); ?>
@@ -58,15 +40,14 @@ get_header();
             </div>
         </section>
 
-
         <section id="posts" class="section py-4">
             <div class="container">
                 <?php if($posts ->  have_posts()): ?>
                     <!-- Begin pagination -->
                     <div class="pagination--wrapper mb-4">
-                        <div class="nav-previous"><?php previous_posts_link('Older posts'); ?></div>
+                        <div class="nav-previous"><?php next_posts_link('Older posts'); ?></div>
                         <?php the_posts_pagination(); ?>
-                        <div class="nav-next"><?php next_posts_link('Newer posts'); ?></div>
+                        <div class="nav-next"><?php previous_posts_link('Newer posts'); ?></div>
                     </div>
                     <!-- End pagination -->
 
@@ -83,32 +64,21 @@ get_header();
                             </a>
                         <?php endwhile; ?>
                     </div>
-                <?php wp_reset_postdata(); ?>
+                    <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
 
                     <!-- Begin pagination -->
-                    <div class="pagination--wrapper mb-4">
-                        <div class="nav-previous"><?php previous_posts_link('Older posts'); ?></div>
+                    <div class="pagination--wrapper">
+                        <div class="nav-previous"><?php next_posts_link('Older posts'); ?></div>
                         <?php the_posts_pagination(); ?>
-                        <div class="nav-next"><?php next_posts_link('Newer posts'); ?></div>
+                        <div class="nav-next"><?php previous_posts_link('Newer posts'); ?></div>
                     </div>
                     <!-- End pagination -->
 
             </div>
         </section>
 
-        <?php
-            if($page_id = get_option('page_for_posts')) {
-                get_the_title($page_id);
-
-                if($post = get_post($page_id)) {
-                    setup_postdata($post);
-                    the_content();
-                    wp_reset_postdata();
-                }
-
-            }
-        ;?>
+        <?php get_template_part('blocks/cta/cta', 'page'); ?>
 
 	</main><!-- #main -->
 

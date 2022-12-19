@@ -22,6 +22,7 @@
 @import "components/footer";
 @import "components/form";
 @import "components/header";
+@import "components/logos";
 @import "components/optin";
 @import "components/pagination";
 @import "components/postcard";
@@ -29,3 +30,9 @@
 @import "components/section";
 @import "components/services-card";
 @import "components/services";
+@import "components/testimonials";
+
+/* Pages
+--------------------------------------------- */
+@import "pages/services";
+@import "pages/single";

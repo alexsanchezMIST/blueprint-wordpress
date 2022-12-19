@@ -51,6 +51,7 @@ function blueprint_setup() {
 		array(
 			'main-navigation' => esc_html__( 'Primary', 'blueprint' ),
 			'footer-links-menu' => esc_html__( 'Footer Links Menu', 'blueprint' ),
+			'footer-resources-menu' => esc_html__( 'Footer Resources Menu', 'blueprint' ),
 			'footer-legal-menu' => esc_html__( 'Footer Legal Menu', 'blueprint'),
 		)
 	);
@@ -197,3 +198,10 @@ function register_acf_blocks() {
 	register_block_type( __DIR__ . '/blocks/services');
 	register_block_type( __DIR__ . '/blocks/testimonials');
 }
+
+function tg_exclude_pages_from_search_results( $query ) {
+    if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
+        $query->set( 'post_type', array( 'post' ) );
+    }    
+}
+add_action( 'pre_get_posts', 'tg_exclude_pages_from_search_results' );

@@ -31,7 +31,8 @@
   }
 }
 
-.post--thumbnail {
+.post--thumbnail,
+.crp_thumb {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -64,5 +65,22 @@
 }
 
 .post--card--excerpt p {
+  font-size: map-get($font-size, "300");
+}
+
+.crp_title {
+  @extend h5;
+  @extend .post--card--heading;
+  margin-top: map-get($spacing, "400");
+  padding-inline: map-get($spacing, "400");
+}
+
+.post--card span {
+  display: block;
+}
+
+.crp_excerpt {
+  padding-bottom: map-get($spacing, "400");
+  padding-inline: map-get($spacing, "400");
   font-size: map-get($font-size, "300");
 }

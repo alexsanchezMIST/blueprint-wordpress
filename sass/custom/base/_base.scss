@@ -1,4 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  overflow-x: hidden;
   background-image: linear-gradient(to bottom, $white, map-get($primary, "50"));
   background-repeat: no-repeat;
   background-position: center center;
@@ -47,9 +52,17 @@ main {
   position: relative;
 }
 
+.page {
+  margin: 0;
+}
+
 .intro--wrapper {
   width: 100%;
   max-width: 48.125rem;
   margin-inline: auto;
   text-align: center;
+}
+
+a:visited {
+  color: unset;
 }

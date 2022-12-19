@@ -1,0 +1,23 @@
+.logo-carousel-free.logo-carousel-free-area.sp-lc-container {
+  padding-block: map-get($spacing, "400");
+}
+
+#logo-carousel-free-3586.sp-lc-container .sp-logo-carousel {
+  padding-bottom: 0 !important;
+}
+
+.sp-lc-pagination {
+  display: none !important;
+}
+
+.sp-lc-logo {
+  border: none !important;
+
+  > img {
+    width: 10rem !important;
+    height: auto !important;
+    max-height: 2.5rem !important;
+    object-fit: contain;
+    opacity: 0.5;
+  }
+}
